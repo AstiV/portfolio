@@ -1,0 +1,17 @@
+.footer {
+  background: #fafafa;
+  min-height: 50px;
+  text-align: left;
+  color: #b1b1b1;
+  padding-top: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
