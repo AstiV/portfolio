@@ -39,4 +39,26 @@
   height: 620px;
   margin: 0 auto;
   background: #383737;
+  display: flex;
+  flex-direction: column;
+}
+
+.input:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.output {
+  color: #ccc;
+  margin-left: 1rem;
+}
+
+.details {
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  color: #3a92c8;
+  text-decoration: none;
 }
