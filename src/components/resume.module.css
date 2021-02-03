@@ -1,0 +1,35 @@
+.resume {
+  background-color: #ddd;
+  height: auto;
+  padding-top: 60px;
+  font-size: 19px;
+  line-height: 34px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 700px;
+}
+
+.tagline {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  padding-bottom: 50px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.sectiontagline {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #cec8c8;
+  font-size: 11px;
+  text-transform: uppercase;
+}
