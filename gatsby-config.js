@@ -13,5 +13,13 @@ module.exports = {
     data: ["item 1", "item 2"],
     person: { name: "asti", age: 35 },
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+  ],
 }
