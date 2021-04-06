@@ -1,13 +1,18 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 import * as resumeItemStyles from "./resumeItem.module.css"
 
 export default function ResumeItem() {
   return (
     <article>
-      <p>
-        <a target="_blank" rel="noreferrer" href="https://www.preis.de/">
-          <img class="icon" src="/" />
+      <p className={resumeItemStyles.header}>  
+        <a target="_blank" rel="noreferrer" href="https://www.preis.de/" className={resumeItemStyles.logo}>
+          <StaticImage 
+            src="../images/preis.svg"
+            width={50}
+            alt="Preis.de Logo"
+          />
         </a>
         <div className={resumeItemStyles.wrapper}>
           <div>
