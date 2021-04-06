@@ -1,5 +1,5 @@
 import React from "react"
-import resumeStyles from "./resume.module.css"
+import * as resumeStyles from "./resume.module.css"
 import ResumeItem from "./resumeItem"
 
 export default function Resume() {

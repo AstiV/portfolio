@@ -1,6 +1,6 @@
 import React from "react"
 
-import aboutStyles from "./about.module.css"
+import * as aboutStyles from "./about.module.css"
 
 export default function About() {
   return (
@@ -52,7 +52,7 @@ export default function About() {
           <span className={aboutStyles.output}>
             {"=>"} "
             <a
-              target="_blank"
+              target="_blank" rel="noreferrer"
               className={aboutStyles.link}
               href="astridvarga.pdf"
             >
@@ -64,7 +64,7 @@ export default function About() {
           <span className={aboutStyles.output}>
             {"=>"} "
             <a
-              target="_blank"
+              target="_blank" rel="noreferrer"
               className={aboutStyles.link}
               href="mailto:astrid.varga@gmx.de"
             >

@@ -1,5 +1,5 @@
 import React from "React"
-import heroStyles from "./hero.module.css"
+import * as heroStyles from "./hero.module.css"
 
 export default function Hero() {
   return (

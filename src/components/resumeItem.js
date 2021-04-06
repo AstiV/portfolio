@@ -1,12 +1,12 @@
 import React from "react"
 
-import resumeItemStyles from "./resumeItem.module.css"
+import * as resumeItemStyles from "./resumeItem.module.css"
 
 export default function ResumeItem() {
   return (
     <article>
       <p>
-        <a target="_blank" href="http://usc.edu">
+        <a target="_blank" rel="noreferrer" href="http://usc.edu">
           <img class="icon" src="img/companies/usc2.jpg" />
         </a>
         <div className={resumeItemStyles.wrapper}>

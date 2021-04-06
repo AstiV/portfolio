@@ -1,6 +1,6 @@
 import React from "react"
 
-import footerStyles from "./footer.module.css"
+import * as footerStyles from "./footer.module.css"
 
 export default function Footer() {
   return (
@@ -13,14 +13,14 @@ export default function Footer() {
           </a>
           &nbsp;//&nbsp;
           <a
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://de.linkedin.com/in/astrid-varga"
             rel="noreferrer"
           >
             LinkedIn
           </a>
           &nbsp;//&nbsp;
-          <a target="_blank" href="https://github.com/AstiV" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" href="https://github.com/AstiV" rel="noreferrer">
             GitHub
           </a>
         </span>

@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Datahead from "../graphQlexamples/datahead"
-import exampleStyles from "./graphQlexamples.module.css"
+import * as exampleStyles from "./graphQlexamples.module.css"
 
 // Page Query
 import { graphql } from "gatsby"
