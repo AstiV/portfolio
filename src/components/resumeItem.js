@@ -30,9 +30,8 @@ export default function ResumeItem() {
       </p>
       <p>
         Description of Job goes here... Something like: Responsible for
-        maintaining the USC Roski School of Fine Arts website. Additionally
-        worked on design and PHP/MySQL development for a new equipment rental
-        web application used by all departments within the art school.
+        maintaining the xxx website. Additionally
+        worked on PHP/MySQL development for web application...
       </p>
       <span className={resumeItemStyles.skill}>Html</span>
       <span className={resumeItemStyles.skill}>SCSS</span>
