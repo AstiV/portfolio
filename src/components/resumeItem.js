@@ -6,8 +6,8 @@ export default function ResumeItem() {
   return (
     <article>
       <p>
-        <a target="_blank" rel="noreferrer" href="http://usc.edu">
-          <img class="icon" src="img/companies/usc2.jpg" />
+        <a target="_blank" rel="noreferrer" href="https://www.preis.de/">
+          <img class="icon" src="/" />
         </a>
         <div className={resumeItemStyles.wrapper}>
           <div>
