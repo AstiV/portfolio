@@ -1,6 +1,6 @@
 ---
 url: "https://www.wunderagent.de/"
-logo: "images/preis.svg"
+featuredImage: "../../../src/images/wunderagent.png"
 alt: "Wunderagent Logo"
 company: "WunderAgent"
 title: "Marketing Manager"

@@ -1,6 +1,7 @@
 ---
 url: "https://www.preis.de/"
-logo: "images/preis.svg"
+featuredImage: "../../../src/images/preis.svg"
+logo: "/images/preis.svg"
 alt: "Preis.de Logo"
 company: "Preis.de"
 title: "Frontend Developer"
