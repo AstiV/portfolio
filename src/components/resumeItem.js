@@ -1,52 +1,81 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql, StaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as resumeItemStyles from "./resumeItem.module.css"
 
 export default function ResumeItem() {
   return (
-    <article>
-      <p className={resumeItemStyles.header}>  
-        <a target="_blank" rel="noreferrer" href="https://www.preis.de/" className={resumeItemStyles.logo}>
-          <StaticImage 
-            src="../images/preis.svg"
-            width={50}
-            alt="Preis.de Logo"
-          />
-        </a>
-        <div className={resumeItemStyles.wrapper}>
-          <div>
-            <div>
-              <b>Preis.de</b>
-            </div>
-            <div>
-              <b>Frontend Developer</b>
-            </div>
-          </div>
-          <div>
-            <div>
-              <i>2019 - present</i>
-            </div>
-            <div>
-              <i>Berlin, Germany</i>
-            </div>
-          </div>
+    <StaticQuery
+      query={graphql`
+        query {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___range], order: DESC }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  alt
+                  company
+                  location
+                  logo
+                  range
+                  skills
+                  title
+                  url
+                }
+                html
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <div>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <article key={node.id}>
+              <p>{node.frontmatter.company}</p>
+              <p className={resumeItemStyles.header}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={node.url}
+                  className={resumeItemStyles.logo}
+                >
+                  <GatsbyImage
+                    src={node.frontmatter.logo}
+                    width={50}
+                    alt={node.frontmatter.alt}
+                  />
+                </a>
+                <div className={resumeItemStyles.wrapper}>
+                  <div>
+                    <div>
+                      <b>{node.frontmatter.company}</b>
+                    </div>
+                    <div>
+                      <b>{node.frontmatter.title}</b>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <i>{node.frontmatter.range}</i>
+                    </div>
+                    <div>
+                      <i>{node.frontmatter.location}</i>
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <p>{node.html}</p>
+              {node.frontmatter.skills.map(skill => (
+                <span className={resumeItemStyles.skill}>{skill}</span>
+              ))}
+            </article>
+          ))}
         </div>
-      </p>
-      <p>
-        Description of Job goes here... Something like: Responsible for
-        maintaining the xxx website. Additionally
-        worked on PHP/MySQL development for web application...
-      </p>
-      <span className={resumeItemStyles.skill}>Html</span>
-      <span className={resumeItemStyles.skill}>SCSS</span>
-      <span className={resumeItemStyles.skill}>PHP</span>
-      <span className={resumeItemStyles.skill}>Laravel</span>
-      <span className={resumeItemStyles.skill}>SQL</span>
-      <span className={resumeItemStyles.skill}>Git</span>
-      <span className={resumeItemStyles.skill}>GitHub</span>
-      <span className={resumeItemStyles.skill}>Sourcetree</span>
-      <span className={resumeItemStyles.skill}>Jira</span>
-    </article>
+      )}
+    />
   )
 }

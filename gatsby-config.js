@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Gatsby Portfolio",
+    title: "Portfolio",
     description: "some random description",
     author: "@Asti",
     data: ["item 1", "item 2"],
@@ -21,6 +21,14 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'jobs',
+        path: `${__dirname}/content/jobs`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images

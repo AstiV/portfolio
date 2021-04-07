@@ -22,16 +22,6 @@
   text-transform: uppercase;
 }
 
-.header {
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  left: -64px;
-  top: -9px;
-}
-
 .sectiontagline {
   text-align: left;
   font-family: "Open Sans", sans-serif;
