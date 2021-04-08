@@ -11,9 +11,10 @@ skills:
   - SCSS
 ---
 
-- Description of Job goes here... Something like: Responsible for
-  maintaining the xxx website. Additionally
-  worked on PHP/MySQL development for web application...
+Description of Job goes here... Something like: Responsible for
+maintaining the xxx website. Additionally
+worked on PHP/MySQL development for web application...
+
 - Landing Pages
 - E-Mail Newsletter
 - Planning etc. content on page

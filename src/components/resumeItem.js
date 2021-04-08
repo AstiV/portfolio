@@ -12,7 +12,6 @@ export default function ResumeItem() {
       ) {
         edges {
           node {
-            id
             frontmatter {
               alt
               company
@@ -24,7 +23,7 @@ export default function ResumeItem() {
               featuredImage {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 50
+                    width: 70
                     placeholder: BLURRED
                     formats: [AUTO, WEBP, AVIF]
                   )
@@ -47,48 +46,62 @@ export default function ResumeItem() {
       {jobsData &&
         jobsData.map(({ node }, i) => {
           const image = getImage(node.frontmatter.featuredImage)
+          const { frontmatter, html } = node
+          const {
+            alt,
+            company,
+            location,
+            range,
+            skills,
+            title,
+            url,
+            featuredImage,
+          } = frontmatter
           return (
             <article key={i} className={resumeItemStyles.article}>
               <p className={resumeItemStyles.header}>
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href={node.frontmatter.url}
+                  href={url}
                   className={resumeItemStyles.logo}
                 >
-                  {!node.frontmatter.featuredImage.childImageSharp &&
-                    node.frontmatter.featuredImage.extension === "svg" && (
-                      <img
-                        src={node.frontmatter.featuredImage.publicURL}
-                        alt={node.frontmatter.alt}
-                        width="50"
-                      />
+                  {!featuredImage.childImageSharp &&
+                    featuredImage.extension === "svg" && (
+                      <img src={featuredImage.publicURL} alt={alt} width="70" />
                     )}
-                  {node.frontmatter.featuredImage.childImageSharp && (
-                    <GatsbyImage image={image} alt={node.frontmatter.alt} />
+                  {featuredImage.childImageSharp && (
+                    <GatsbyImage
+                      image={image}
+                      alt={alt}
+                      imgClassName="logo-image"
+                    />
                   )}
                 </a>
                 <div className={resumeItemStyles.wrapper}>
                   <div>
                     <div>
-                      <b>{node.frontmatter.company}</b>
+                      <b>{company}</b>
                     </div>
                     <div>
-                      <b>{node.frontmatter.title}</b>
+                      <b>{title}</b>
                     </div>
                   </div>
                   <div>
                     <div>
-                      <i>{node.frontmatter.range}</i>
+                      <i>{range}</i>
                     </div>
                     <div>
-                      <i>{node.frontmatter.location}</i>
+                      <i>{location}</i>
                     </div>
                   </div>
                 </div>
               </p>
-              <p>{node.html}</p>
-              {node.frontmatter.skills.map(skill => (
+              <div
+                className={resumeItemStyles.description}
+                dangerouslySetInnerHTML={{ __html: node.html }}
+              />
+              {skills.map(skill => (
                 <span className={resumeItemStyles.skill}>{skill}</span>
               ))}
             </article>

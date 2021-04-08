@@ -8,13 +8,25 @@
 
 .logo {
   position: absolute;
-  left: -64px;
-  top: -12px;
+  left: -120px;
+  filter: grayscale(100%);
+}
+
+.logo img {
+  border-radius: 50%;
+}
+
+.logo:hover {
+  filter: none;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.description ul {
+  list-style: circle;
 }
 
 .skill {
